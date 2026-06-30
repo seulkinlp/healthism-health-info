@@ -1,0 +1,42 @@
+# ── 데이터: 절대 커밋 금지 (저작권·이용약관·용량) ──
+data/raw/
+data/interim/
+data/processed/
+*.csv
+*.tsv
+*.parquet
+*.feather
+!config/**/*.csv          # config 안의 키워드/채널 목록은 예외로 허용
+
+# ── 비밀정보: API 키, 토큰 ──
+.env
+*.key
+config/secrets.*
+**/credentials.json
+**/client_secret*.json
+
+# ── 모델 가중치 (용량 큼) ──
+*.pt
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+
+# ── R ──
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# ── OS / 에디터 ──
+.DS_Store
+.vscode/
+.idea/
