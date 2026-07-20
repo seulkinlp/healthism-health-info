@@ -22,3 +22,8 @@
 - 주의: 초기 번호대에 비건강 기사 혼재(예: idxno=5000 통신 기사) → 건강 기사 필터 필요
 - 주의: 결번 존재(50000, 70000 빈 출력) → 순회 시 스킵 로직 필요
 - 다음: ① 매경헬스 수집 스크립트 작성(collect_mkhealth.py, idxno 순회 방식) ② 헬스경향·코메디닷컴 정찰
+- 매경헬스 파싱 대상 확정: 본문 `article#article-view-content-div` (itemprop=articleBody, <p> 단위 / <figure>는 캡션이라 제외), 제목 `h1.heading`, 부제 `h4.subheading`, 게재일 705행 형태 `<li><i class="icon-clock-o"></i> 입력 YYYY.MM.DD HH:MM</li>`, 기자명 info-group 내 링크
+- 확인: 기사 페이지 breadcrumb은 '홈>뉴스'까지만 — 서브섹션(건강·질병 등) 판별 불가
+- 다음 세션 첫 확인: 섹션별 목록페이지(articleList.html?sc_sub_section_code=S2N46) 과거 페이지네이션 가능 여부
+  → 가능하면 섹션 순회 방식(정확), 불가하면 idxno 순회 + 사후 키워드 분류
+- 검증 예정: 초기 idxno 기사 날짜 신뢰성 — 사진 URL의 photo/YYYYMM 경로와 대조
